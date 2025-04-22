@@ -1,0 +1,80 @@
+## Introduction
+
+In the insurance industry, processing claims for vehicle damage is a common task.<br>
+With advancements in AI and Computer Vision, settling claims online by uploading damaged car images is now possible.
+
+## Dataset
+
+> https://www.kaggle.com/datasets/imnandini/analytics-vidya-ripik-ai-hackfest
+>> Training set (`train.zip`)<br>
+>> Test set (`test.zip`)<br>
+>> Sample submission (`sample_submission.csv`)
+
+### Training Dataset
+
+The training set contains a diverse dataset of car images with labels indicating the specific type of damage (e.g., dents, scratches, cracks).<br>
+The `train.csv` file includes the following columns:
+
+- `image_id`: Unique identifier of the image<br>
+- `filename`: Filename of the image<br>
+- `label`: Type of damage present in the car<br>
+  1. Crack
+  2. Scratch
+  3. Tire Flat
+  4. Dent
+  5. Glass Shatter
+  6. Lamp Broken
+
+### Test Dataset
+
+The test set contains only images, and the goal is to predict the type of damage for each image.<br>
+The `test.csv` file includes the following columns:
+
+- `image_id`: Unique identifier of the image
+- `filename`: Filename of the image
+
+## Sample Submission
+
+The solution file must contain predictions for every `image_id` in the test set. It must contain only 2 columns - `image_id` and `label`.<br>
+The solution file format must be similar to that of `sample_submission.csv`. `sample_submission.csv` contains 2 variables:
+
+- `image_id`: Unique identifier of an image
+- `label`: Type of damage present in the car {1:crack, 2:scratch, 3:tire flat, 4:dent, 5:glass shatter, 6:lamp broken}
+
+## Evaluation Metric
+
+The model will be evaluated based on the macro F1 score.
+
+
+## Table of Contents
+
+1. Recognizing and Understanding Data
+    - Reading train and test csv Files
+    - Detailed EDA Check Images
+    
+    
+2. Train Test Split
+
+
+3. Build Dataset
+    - Image Data Generator (Data augmentation)
+    - flow_from_dataframe (with pandas dataframe)
+    - flow_from_directory (with subdirectories)
+    - Dataset Sanity Check
+    - Dataset Benchmark Test
+    - Optimize Performance
+    - Explore Dataset Images
+    
+    
+3. CNN (CONVOLUTIONAL NEURAL NETWORK) MODELING
+    - Build CNN Model
+    - Model Training
+    - Model History
+        - Save Model Weights
+    - Model evaluation
+        - BEST THRESHOLD calculate precision-recall curve
+        - Predict Val Data
+        - Predict Test Data 
+        
+        
+4. Save Submission
